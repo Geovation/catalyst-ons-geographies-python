@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "catalyst_ons_geography"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
     "duckdb",
     'importlib-metadata; python_version<"3.10"',

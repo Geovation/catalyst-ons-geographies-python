@@ -1,4 +1,4 @@
-'''Using a DuckDB database to get ONS Geography data'''
+'''Using a DuckDB database to get ONS Geography data from the ONS Postcode Directory'''
 
 import os
 
@@ -37,7 +37,7 @@ def get_ons_from_postcodes(postcodes):
     for row in postcode_data:
         ons_data_object = {}
         # Loop through each column in the row
-        for i in range(len(row)):
+        for i in enumerate(row):
             if descriptions[i][0] not in ['longitude', 'latitude', 'geometry']:
                 ons_data_object[descriptions[i][0]] = row[i]
         ons_data.append(ons_data_object)
