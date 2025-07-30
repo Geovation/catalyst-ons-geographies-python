@@ -1,7 +1,6 @@
 '''Using a DuckDB database to get ONS Geography data from the ONS Postcode Directory'''
 
 import os
-
 import duckdb
 
 
