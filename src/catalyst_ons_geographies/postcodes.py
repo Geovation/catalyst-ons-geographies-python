@@ -4,15 +4,14 @@ import os
 import duckdb
 
 
-def get_ons_from_postcodes(postcodes):
+def get_ons_from_postcodes(postcodes, db_path='/data/ons_postcodes.duckdb'):
     '''Get the ONS Geography data from the postcodes'''
 
     # The path is either data/ or /data/ depending on the environment
-    db = '/data/ons_postcodes.duckdb'
-    if not os.path.exists(db):
-        db = 'data/ons_postcodes.duckdb'
+    if not os.path.exists(db_path):
+        db_path = 'data/ons_postcodes.duckdb'
 
-    conn = duckdb.connect(database=db, read_only=True)
+    conn = duckdb.connect(database=db_path, read_only=True)
 
     # For all postcodes in the postcode array, remove any whitespace
     postcodes = [postcode.replace(' ', '') for postcode in postcodes]
