@@ -35,7 +35,7 @@ def get_ons_from_postcodes(postcodes, db_path='/data/ons_postcodes.duckdb'):
     for row in postcode_data:
         ons_data_object = {}
         # Loop through each column in the row
-        for i in enumerate(row):
+        for i, o in enumerate(row):
             if descriptions[i][0] not in ['longitude', 'latitude', 'geometry']:
                 ons_data_object[descriptions[i][0]] = row[i]
         ons_data.append(ons_data_object)
